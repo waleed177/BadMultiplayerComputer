@@ -1,0 +1,126 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Connection/Connection.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Connection/ConnectionGUIController.gd" type="Script" id=2]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="Login" type="Panel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -280.5
+margin_top = -64.0
+margin_right = 280.5
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostServer" type="Button" parent="CanvasLayer/Login"]
+margin_left = 18.0
+margin_top = 84.3102
+margin_right = 293.0
+margin_bottom = 114.31
+text = "Host Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinServer" type="Button" parent="CanvasLayer/Login"]
+margin_left = 297.0
+margin_top = 84.0
+margin_right = 544.0
+margin_bottom = 114.0
+text = "Join Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="TextEdit" parent="CanvasLayer/Login"]
+margin_left = 156.0
+margin_top = 22.2712
+margin_right = 544.0
+margin_bottom = 49.2712
+rect_pivot_offset = Vector2( 24.455, 211.799 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameLabel" type="Label" parent="CanvasLayer/Login"]
+margin_left = 18.0
+margin_top = 22.2712
+margin_right = 156.0
+margin_bottom = 49.2712
+rect_pivot_offset = Vector2( 162.455, 211.599 )
+text = "Username:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IP" type="TextEdit" parent="CanvasLayer/Login"]
+margin_left = 156.0
+margin_top = 49.2712
+margin_right = 544.0
+margin_bottom = 76.2712
+rect_pivot_offset = Vector2( 24.455, 211.799 )
+text = "127.0.0.1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPLabel" type="Label" parent="CanvasLayer/Login"]
+margin_left = 18.0
+margin_top = 49.2712
+margin_right = 156.0
+margin_bottom = 76.2712
+rect_pivot_offset = Vector2( 162.455, 211.599 )
+text = "IP:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaitingScreen" type="Panel" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -302.0
+margin_top = -248.0
+margin_right = 302.0
+margin_bottom = 248.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerList" type="ItemList" parent="CanvasLayer/WaitingScreen"]
+margin_left = 21.5
+margin_top = 4.0
+margin_right = 583.5
+margin_bottom = 423.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ready" type="Button" parent="CanvasLayer/WaitingScreen"]
+margin_left = 22.0
+margin_top = 434.0
+margin_right = 583.0
+margin_bottom = 480.0
+text = "Ready"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CanvasLayer/Login/HostServer" to="CanvasLayer" method="_on_HostServer_pressed"]
+[connection signal="pressed" from="CanvasLayer/Login/JoinServer" to="CanvasLayer" method="_on_JoinServer_pressed"]
+[connection signal="pressed" from="CanvasLayer/WaitingScreen/Ready" to="CanvasLayer" method="_on_Ready_pressed"]

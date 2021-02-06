@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Game/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/ColoredSprite/ColoredSprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/UI/ScriptEditor/ScriptEditor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Monitor/Monitor.tscn" type="PackedScene" id=5]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScriptEditor" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 516.188, 296.985 )
+current = true
+script = ExtResource( 2 )
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="ColoredSprite" parent="." instance=ExtResource( 3 )]
+position = Vector2( 371.265, 278.272 )
+
+[node name="ColoredSprite2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 430.307, 278.272 )
+
+[node name="ColoredSprite3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 479.751, 279.77 )
+
+[node name="ColoredSprite4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 543.43, 280.519 )
+
+[node name="Monitor" parent="." instance=ExtResource( 5 )]
+position = Vector2( 401, 213 )
+
+[node name="Monitor2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 510.376, 214.498 )
